@@ -18,16 +18,10 @@
 
 ### 📦 Installation
 
-Using **npm**:
+Using **pnpm**:
 
 ```bash
-npm install miti-pariwartan
-```
-
-Using **yarn**:
-
-```bash
-yarn add miti-pariwartan
+pnpm add miti-pariwartan
 ```
 
 Using **CDN**:

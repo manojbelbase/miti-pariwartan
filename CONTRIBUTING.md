@@ -13,9 +13,8 @@ If you encounter any violations, please report them to [manojbelbase56@gmail.com
 ## Getting Started
 
 ### Prerequisites
-- Node.js (v16 or higher)
-- npm or yarn
-- TypeScript (for type checking)
+- Node.js 22.12 or higher
+- pnpm 12.6.0 (specified in `package.json`)
 - Git
 
 ### Fork and Clone the Repository
@@ -31,22 +30,18 @@ If you encounter any violations, please report them to [manojbelbase56@gmail.com
    ```
 
 ### Set Up Your Environment
-1. Install dependencies:
+1. Install dependencies using the committed lockfile:
    ```bash
-   npm install
+   pnpm install --frozen-lockfile
    ```
-   or
+2. Verify the setup:
    ```bash
-   yarn install
+   pnpm lint
+   pnpm type-check
+   pnpm build
    ```
-2. Verify the setup by running tests:
-   ```bash
-   npm test
-   ```
-   or
-   ```bash
-   yarn test
-   ```
+
+Commit `pnpm-lock.yaml` when dependencies change. pnpm is the package manager for this repository.
 
 ## Development Workflow
 
@@ -70,24 +65,21 @@ If you encounter any violations, please report them to [manojbelbase56@gmail.com
    ```
    Use semantic commit messages (e.g., `feat:`, `fix:`, `docs:`, `chore:`).
 
-### Testing
-- Run unit tests:
+### Validation
+- Run linting, type checks, and the library build:
   ```bash
-  npm run test
+  pnpm lint
+  pnpm type-check
+  pnpm build
   ```
-- Run linting and type checks:
-  ```bash
-  npm run lint
-  npm run type-check
-  ```
-- All tests must pass before submitting changes.
+- There is currently no automated test script. Include reproduction steps for bug fixes.
 
 ### Building the Library
 - Build for production:
   ```bash
-  npm run build
+  pnpm build
   ```
-- This generates CommonJS and ES Module builds in the `dist/` folder.
+- This generates CommonJS, ES Module, and UMD builds in the `lib/` folder.
 
 ## Submitting Pull Requests (PRs)
 
@@ -141,9 +133,11 @@ We prioritize issues based on impact and feasibility.
 ## Releasing
 
 Releases are handled by maintainers:
-- Bump version in `package.json` (semantic versioning: major.minor.patch).
+- Bump version with `pnpm version patch --no-git-tag-version` (or `minor` / `major` as appropriate).
 - Update changelog.
-- Run `npm publish` and create a GitHub release.
+- Run `pnpm lint`, `pnpm type-check`, and `pnpm build`.
+- Preview the package with `pnpm publish --dry-run`.
+- Commit and tag the release, then run `pnpm publish` to publish to the npm registry and create a GitHub release.
 
 ## Questions?
 

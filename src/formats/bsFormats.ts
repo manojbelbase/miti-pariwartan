@@ -18,7 +18,7 @@ export function parseBSString(input: string):
     for (const regex of BS_PATTERNS) {
         if (regex.test(str)) {
             // Replace any separator with a single space, then split
-            const cleaned = str.replace(/[-\/.]/g, " ");
+            const cleaned = str.replace(/[-/.]/g, " ");
             const parts = cleaned.split(/\s+/).map(Number);
 
             if (parts.length === 3 && parts.every((n) => !Number.isNaN(n))) {

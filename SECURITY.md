@@ -36,7 +36,7 @@ We take security seriously. If you discover a security issue, please report it t
 
 ### For Users
 - 🔄 **Keep Updated**: Use the latest version of Miti Pariwartan to benefit from security patches.
-- 🛡️ **Audit Dependencies**: Run `npm audit` periodically to check for vulnerabilities in dependencies.
+- 🛡️ **Audit Dependencies**: Run `pnpm audit` periodically to check for vulnerabilities in dependencies.
 - 🚫 **Avoid Modifying Source**: Stick to the distributed package to ensure integrity.
 
 ## 🛠 Handling of Reports

@@ -27,3 +27,7 @@ lib/
 *.sln
 *.sw?
 
+
+# Use pnpm as the project package manager
+package-lock.json
+yarn.lock
